@@ -7,7 +7,7 @@ import requests
 import pyperclip
 #ProjectbyVarunAdhityaGB
 ######################## CONNECTING SQL ###############################################
-mydb = sqlc.connect(host='localhost', user='root', passwd='root',)
+mydb = sqlc.connect(host='localhost', user='root', passwd='mysql',)
 mycur = mydb.cursor()
 
 #########################   VARIABLES   ##################################################

@@ -12,7 +12,7 @@ from tabulate import tabulate
 
 ##################################### CONNECTING MySQL ################################
 
-mydb = sqlc.connect(host='localhost', user='root', passwd='root',)
+mydb = sqlc.connect(host='localhost', user='root', passwd='mysql',)
 mycur = mydb.cursor()
 
 ##################################### FUNCTIONS ################################
@@ -243,9 +243,9 @@ def otpmail(receivermail):
     part = MIMEText(html, "html")
     msg.attach(part)
 
-    #context = ssl.create_default_context()
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:  #, context=context 
-        server.login('manageyourpass91@gmail.com','Acc3ssGr@nted')
+    context = ssl.create_default_context()
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context = context) as server:
+        server.login('manageyourpass91@gmail.com','mokktrqhxujqrrtd')
         server.send_message(msg)
         server.quit()
     
